@@ -1,12 +1,14 @@
-
+@import url('../vars.css');
 .register-main{
     display: flex;
+    background-color: var(--background-color);
+    
   }
   
   .register-left{
     flex-grow: 1;
-    height: 100vh;
-    background-color: #E9E9E9;
+    height: 135vh;
+    background-color: var(--background-color);
   
     display: flex;
     justify-content: center;
@@ -18,14 +20,17 @@
   }
   
   .register-right{
-  
-    height: 100vh;
-  
+    height: 100%;
     flex-grow: 1;
-  
-  
+    background-color:var(--primary-color);
+    /* color:var(--background-color); */
+    color: black;
+    border-radius: 20% 0 0 20%  ;
   }
-  
+  input{
+    background-color: var(--background-color);
+    border-radius: 1rem;
+  }
   .register-right-container{
     height: 100%;
     width: 80%;
@@ -52,7 +57,9 @@
   }
   
   .register-logo img{
-    width: 50px;
+    width: 8rem;
+    height:6rem;
+    margin-top: 5rem;
   }
   
   .register-center h2{
@@ -143,15 +150,18 @@
   
   .register-center-buttons button:nth-child(1){
     background-color: black;
-    color: white;
+    /* background-color: var(--accent-color1); */
+    color: var(--background-color);
     border: 3px solid black;
     transition: background 1s linear 0ms;
     transition: color 500ms linear 0ms;
   }
   
   .register-center-buttons button:nth-child(1):hover{
-    color: #333;
-    background-color: white;
+    color: white;
+    background-color: rgb(72, 67, 67);
+    /* background-color: var(--background-color); */
+    transition: 0.8s;
   }
   
   .register-center-buttons button:nth-child(2){
@@ -185,4 +195,5 @@
   .register-bottom-p a:hover{
     text-decoration: underline;
   }
+  
   

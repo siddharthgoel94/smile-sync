@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "../assets/image.png";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/smile-sync-logo.jpeg";
 import GoogleSvg from "../assets/icons8-google.svg";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
@@ -68,7 +68,7 @@ const Login = () => {
       <div className="register-right">
         <div className="register-right-container">
           <div className="register-logo">
-            <img src={Logo} alt="" />
+            <img src={Logo} alt="our logo"/>
           </div>
           <div className="register-center">
             <h2>Welcome to our website!</h2>
@@ -102,6 +102,8 @@ const Login = () => {
           </p>
         </div>
       </div>
+
+      
     </div>
   );
 };

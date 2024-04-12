@@ -145,10 +145,11 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-main">
-      <h1>Dashboard</h1>
-      <p>{data.msg}! Lets start with a questionnaire to know you better</p>
+      {/* <h2>{data.msg}!<br/> */}
+      <h2>Welcome to your Dashboard</h2>
+      <p> Lets start with a questionnaire to know you better</p>
 
-      <div className="container">
+      <div className="container modalbox">
         {currentQuestionIndex < questionBank.length ? (
           <div className="w-50 mx-auto">
             <h2>Question {currentQuestionIndex + 1}</h2>
@@ -220,9 +221,9 @@ const Dashboard = () => {
           </div>
         )}
       </div>
-      <Link to="/logout" className="logout-button">
+      {/* <Link to="/logout" className="logout-button">
         Logout
-      </Link>
+      </Link> */}
     </div>
   );
 };

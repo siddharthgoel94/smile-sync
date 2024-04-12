@@ -10,7 +10,7 @@ const http = require('http');
 const socketIo = require('socket.io');
 const server = http.createServer(app);
 const io = socketIo(server);
-const {predict} = require('./mlModel');
+// const {predict} = require('./mlModel');
 
 app.use(express.json());
 
@@ -20,10 +20,11 @@ app.use("/api/v1", mainRouter);
 
 app.post("/predict",(req,res)=>{
     console.log(req.body.body);
-    const inputData = req.body.body;
-    // Use your ML model to make a prediction
-    const prediction = predict(inputData);
-    res.send(prediction);
+    // const inputData = req.body.body;
+    // // Use your ML model to make a prediction
+    // const prediction = predict(inputData);
+    // res.send(prediction);
+    res.send("OK");
 })
 const port = process.env.PORT || 3000;
 

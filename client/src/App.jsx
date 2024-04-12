@@ -2,6 +2,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Dashboard, HomeLayout, Landing, Login, Logout, Register } from "./pages";
 import { ToastContainer, toast } from 'react-toastify';
+import Navbar from "./pages/Navbar";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <>
+    <Navbar/>
         <RouterProvider router={router} />
         <ToastContainer position='top-center' />
     </>

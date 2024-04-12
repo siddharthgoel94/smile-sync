@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "../assets/image.png";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/smile-sync-logo.jpeg";
 import GoogleSvg from "../assets/icons8-google.svg";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";

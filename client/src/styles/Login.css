@@ -1,4 +1,4 @@
-
+@import url('../vars.css');
 .login-main{
     display: flex;
   }
@@ -6,11 +6,17 @@
   .login-left{
     flex-grow: 1;
     height: 100vh;
-    background-color: #E9E9E9;
+    /* background-color: #E9E9E9; */
+    height: 100vh;
+    background-color: var(--background-color);
   
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  input{
+    background-color: var(--background-color);
+    border-radius: 1rem;
   }
   
   .login-left img{
@@ -22,6 +28,8 @@
     height: 100vh;
   
     flex-grow: 1;
+    background-color:var(--primary-color);
+    border-radius: 20% 0 0 20%  ;
   
   
   }
@@ -52,7 +60,10 @@
   }
   
   .login-logo img{
-    width: 50px;
+    /* width: 50px; */
+    width: 8rem;
+    height:6rem;
+    margin-top: 2rem;
   }
   
   .login-center h2{
@@ -142,16 +153,19 @@
   }
   
   .login-center-buttons button:nth-child(1){
-    background: black;
-    color: white;
+    background-color: black;
+    /* background-color: var(--accent-color1); */
+    color: var(--background-color);
     border: 3px solid black;
     transition: background 1s linear 0ms;
     transition: color 500ms linear 0ms;
   }
   
   .login-center-buttons button:nth-child(1):hover{
-    color: #333;
-    background-color: white;
+    color: white;
+    background-color: rgb(72, 67, 67);
+    /* background-color: var(--background-color); */
+    transition: 0.8s;
   }
   
   .login-center-buttons button:nth-child(2){
