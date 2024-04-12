@@ -44,3 +44,6 @@ We welcome contributions to improve SmileSync! Please fork the repository and su
 ---
 
 Let's bridge minds and build resilience with SmileSync!
+
+<img width="1273" alt="Screenshot 2024-04-12 at 5 45 39 PM" src="https://github.com/siddharthgoel94/smile-sync/assets/95202859/31bb3d81-e3ff-4429-a5bc-69bfad1c6585">
+
