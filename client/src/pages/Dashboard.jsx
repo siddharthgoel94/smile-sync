@@ -107,18 +107,92 @@ const Dashboard = () => {
                 Yes
               </label>
 
-  <input type="radio" class="btn-check" name="btnradio" id={`btnradio${index}-no`} autocomplete="off"/>
-  <label class="btn btn-outline-secondary" for={`btnradio${index}-no`}>No</label>
-</div>
-</div>
-        ))
-        
-      }
-      <div className='mx-auto'>
-      <button className='btn btn-success w-50 mx-auto' type="submit">Submit my Answers</button>
-      </div>
-      </form>
-      <Link to="/logout" className="logout-button">Logout</Link>
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio"
+                id={`btnradio${index}-no`}
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-secondary"
+                for={`btnradio${index}-no`}
+              >
+                No
+              </label>
+            </div>
+          </div>
+        ))} */}
+      {currentQuestionIndex < questionBank.anxietyQuestions.length ? (
+        <div>
+          <h2>Question {currentQuestionIndex + 1}</h2>
+          <p>{questionBank.anxietyQuestions[currentQuestionIndex].question}</p>
+          <div
+            className="btn-group mx-4"
+            role="group"
+            aria-label="Basic radio toggle button group"
+            required
+          >
+            <input
+              type="radio"
+              className="btn-check"
+              name={`btnradio-${currentQuestionIndex}`}
+              id={`btnradio${currentQuestionIndex}-yes`}
+              onClick={() => handleRadioClick(currentQuestionIndex, 1)}
+              // autocomplete="off"
+            />
+            <label
+              className="btn btn-outline-primary"
+              htmlFor={`btnradio${currentQuestionIndex}-yes`}
+            >
+              Yes
+            </label>
+
+            <input
+              type="radio"
+              className="btn-check"
+              name={`btnradio-${currentQuestionIndex}`}
+              id={`btnradio${currentQuestionIndex}-no`}
+              onClick={() => handleRadioClick(currentQuestionIndex, 0)}
+              // autocomplete="off"
+            />
+            <label
+              className="btn btn-outline-secondary"
+              htmlFor={`btnradio${currentQuestionIndex}-no`}
+            >
+              No
+            </label>
+          </div>
+          <button
+            onClick={handlePrevQuestion}
+            disabled={currentQuestionIndex === 0}
+          >
+            Previous
+          </button>
+          <button
+            onClick={handleNextQuestion}
+            disabled={
+              currentQuestionIndex === questionBank.anxietyQuestions.length
+            }
+          >
+            Next
+          </button>
+        </div>
+      ) : (
+        <div>
+          <h2>Thank you for completing the quiz!</h2>
+          <button onClick={handleSubmit}>Submit</button>
+        </div>
+      )}
+      {/* <div className="mx-auto">
+        <button className="btn btn-success w-50 mx-auto" type="submit">
+          Submit my Answers
+        </button>
+      </div> */}
+      {/* </form> */}
+      <Link to="/logout" className="logout-button">
+        Logout
+      </Link>
     </div>
   );
 };
