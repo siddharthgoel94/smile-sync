@@ -1,5 +1,4 @@
 ## SMILE-SYNC AI
-# SmileSync
 
 SmileSync is an innovative mobile app dedicated to revolutionizing mental health support by providing personalized resources and community connections.
 
@@ -34,7 +33,7 @@ SmileSync plans to monetize through a diverse revenue model:
 
 To get started with SmileSync, follow these steps:
 
-1. Clone the repository: git clone https://github.com/yourusername/smilesync.git
+1. Clone the repository: git clone https://github.com/siddharthgoel94/smile-sync.git
 2. Install dependencies: npm install
 3. Run the app: npm start
 
