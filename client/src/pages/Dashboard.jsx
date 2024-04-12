@@ -47,10 +47,10 @@ const Dashboard = () => {
            <div key={index}>
         {question.question}
           <div class="btn-group mx-4" role="group" aria-label="Basic radio toggle button group" required>
-  <input type="radio" class="btn-check" name="btnradio" id={`btnradio${index}-yes`} autocomplete="off"/>
+  <input type="radio" class="btn-check" name={`btnradio${index}`} id={`btnradio${index}-yes`} autocomplete="off"/>
   <label class="btn btn-outline-primary" for={`btnradio${index}-yes`}>Yes</label>
 
-  <input type="radio" class="btn-check" name="btnradio" id={`btnradio${index}-no`} autocomplete="off"/>
+  <input type="radio" class="btn-check" name={`btnradio${index}`} id={`btnradio${index}-no`} autocomplete="off"/>
   <label class="btn btn-outline-secondary" for={`btnradio${index}-no`}>No</label>
 </div>
 </div>

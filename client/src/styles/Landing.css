@@ -5,8 +5,30 @@
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)), url('../assets/landing-image.jpeg');;
+    /* background: linear-gradient(0deg,black,black),url("../assets/landing-image.jpeg"); */
+    /* background: url("../assets/landing-image.jpeg"); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    padding-left: 1.5rem;
+    /* opacity:0.8; */
+    z-index: 3;
+}
+.landing-heading{
+  font-weight: 600;
+}
+.dark-filter{
+  background-color: black;
+  height: 100vh;
+  width:100vw;
+  opacity:0.3;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 2;
 }
 
 .landing-login-button{
@@ -25,6 +47,7 @@
     margin-top: 10px;
 
     font-size: 20px;
+   
     text-align: center;
     text-decoration: none;
   }
@@ -52,11 +75,15 @@
 
   
   .landing-register-button:hover{
-    color: #333;
-    background-color: white;
+    color: white;
+    background-color: rgb(50, 40, 40);
+    /* background-color: white; */
+    cursor: pointer;
   }
 
   .landing-login-button:hover{
-    color: #333;
-    background-color: white;
+    /* transform: rotate(90); */
+    background-color: rgb(50, 40, 40);
+    color: white;
+    cursor: pointer;
   }
