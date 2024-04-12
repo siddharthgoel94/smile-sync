@@ -75,6 +75,12 @@ const Dashboard = () => {
     console.log(arr);
     return arr;
   };
+  async function test() {
+    const res = await axios.post("http://localhost:3000/predict", {
+      body: [0.25, 0, 0.1111111111111111, 0, 0.14285714285714285],
+    });
+  }
+  test();
   async function handleSubmit() {
     // Handle submission logic here
     console.log("Submit Answers");
