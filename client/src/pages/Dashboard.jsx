@@ -10,24 +10,82 @@ const Dashboard = () => {
 
   const handleNextQuestion = () => {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-    console.log(currentQuestionIndex);
+    // console.log(currentQuestionIndex);
   };
 
   const handlePrevQuestion = () => {
     setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
   };
   // const ans = new Array(questionBank.anxietyQuestions.length);
-  const n = questionBank.anxietyQuestions.length; // Desired length of the array
+  const n = questionBank.length; // Desired length of the array
   const [answers, setAnswers] = useState(new Array(n).fill(0)); // Initialize array with zeros
 
-  const handleSubmit = () => {
+  const modifyArray = (answers) => {
+    const arr = new Array(5);
+    //8
+    let one = 0,
+      zero = 0;
+    for (let i = 0; i <= 7; i++) {
+      if (answers[i] === 1) one++;
+      else zero++;
+    }
+    let res = one / 8.0;
+    arr[0] = res;
+
+    //5
+    one = 0;
+    zero = 0;
+    for (let i = 8; i <= 12; i++) {
+      if (answers[i] === 1) one++;
+      else zero++;
+    }
+    res = one / 5.0;
+    arr[1] = res;
+
+    //9
+    one = 0;
+    zero = 0;
+    for (let i = 13; i <= 21; i++) {
+      if (answers[i] === 1) one++;
+      else zero++;
+    }
+    res = one / 9.0;
+    arr[2] = res;
+
+    //6
+    one = 0;
+    zero = 0;
+    for (let i = 22; i <= 27; i++) {
+      if (answers[i] === 1) one++;
+      else zero++;
+    }
+    res = one / 6.0;
+    arr[3] = res;
+
+    //7
+    one = 0;
+    zero = 0;
+    for (let i = 28; i <= 34; i++) {
+      if (answers[i] === 1) one++;
+      else zero++;
+    }
+    res = one / 7.0;
+    arr[4] = res;
+
+    console.log(arr);
+    return arr;
+  };
+  async function handleSubmit() {
     // Handle submission logic here
     console.log("Submit Answers");
-    // for (let i = 0; i < answers.length; i++) {
-    //   console.log(answers[i]);
-    // }
+    const arr = modifyArray(answers);
+    console.log(arr);
+
+    const res = await axios.post("http://localhost:3000/predict", {
+      body: arr,
+    });
     console.log(answers);
-  };
+  }
 
   // const updateIndex = (index, value) => {
   //   setAnswers((prevArray) => {
@@ -83,113 +141,79 @@ const Dashboard = () => {
     <div className="dashboard-main">
       <h1>Dashboard</h1>
       <p>{data.msg}! Lets start with a questionnaire to know you better</p>
-      {/* <form> */}
-      {/* {questionBank.anxietyQuestions.map((question, index) => (
-          <div key={index}>
-            {question.question}
-            <div
-              class="btn-group mx-4"
-              role="group"
-              aria-label="Basic radio toggle button group"
-              required
-            >
-              <input
-                type="radio"
-                class="btn-check"
-                name="btnradio"
-                id={`btnradio${index}-yes`}
-                autocomplete="off"
-              />
-              <label
-                class="btn btn-outline-primary"
-                for={`btnradio${index}-yes`}
-              >
-                Yes
-              </label>
 
-              <input
-                type="radio"
-                class="btn-check"
-                name="btnradio"
-                id={`btnradio${index}-no`}
-                autocomplete="off"
-              />
-              <label
-                class="btn btn-outline-secondary"
-                for={`btnradio${index}-no`}
+      <div className="container">
+        {currentQuestionIndex < questionBank.length ? (
+          <div className="w-50 mx-auto">
+            <h2>Question {currentQuestionIndex + 1}</h2>
+            <p>{questionBank[currentQuestionIndex].question}</p>
+            <div className="text-center">
+              <div
+                className="btn-group mx-4 mx-auto"
+                role="group"
+                aria-label="Basic radio toggle button group"
+                required
               >
-                No
-              </label>
+                <input
+                  type="radio"
+                  className="btn-check"
+                  name={`btnradio-${currentQuestionIndex}`}
+                  id={`btnradio${currentQuestionIndex}-yes`}
+                  onClick={() => handleRadioClick(currentQuestionIndex, 1)}
+                  // autocomplete="off"
+                />
+                <label
+                  className="btn btn-outline-primary"
+                  htmlFor={`btnradio${currentQuestionIndex}-yes`}
+                >
+                  Yes
+                </label>
+
+                <input
+                  type="radio"
+                  className="btn-check"
+                  name={`btnradio-${currentQuestionIndex}`}
+                  id={`btnradio${currentQuestionIndex}-no`}
+                  onClick={() => handleRadioClick(currentQuestionIndex, 0)}
+                  // autocomplete="off"
+                />
+                <label
+                  className="btn btn-outline-secondary"
+                  htmlFor={`btnradio${currentQuestionIndex}-no`}
+                >
+                  No
+                </label>
+              </div>
+            </div>
+            <div className="text-center">
+              <button
+                onClick={handlePrevQuestion}
+                className="btn btn-secondary mx-5"
+                disabled={currentQuestionIndex === 0}
+              >
+                Previous
+              </button>
+              <button
+                onClick={handleNextQuestion}
+                className="btn btn-secondary mx-5"
+                disabled={currentQuestionIndex === questionBank.length}
+              >
+                Next
+              </button>
             </div>
           </div>
-        ))} */}
-      {currentQuestionIndex < questionBank.anxietyQuestions.length ? (
-        <div>
-          <h2>Question {currentQuestionIndex + 1}</h2>
-          <p>{questionBank.anxietyQuestions[currentQuestionIndex].question}</p>
-          <div
-            className="btn-group mx-4"
-            role="group"
-            aria-label="Basic radio toggle button group"
-            required
-          >
-            <input
-              type="radio"
-              className="btn-check"
-              name={`btnradio-${currentQuestionIndex}`}
-              id={`btnradio${currentQuestionIndex}-yes`}
-              onClick={() => handleRadioClick(currentQuestionIndex, 1)}
-              // autocomplete="off"
-            />
-            <label
-              className="btn btn-outline-primary"
-              htmlFor={`btnradio${currentQuestionIndex}-yes`}
+        ) : (
+          <div>
+            <h2>Thank you for completing the quiz!</h2>
+            <button
+              lassName="btn btn-success w-50 mx-auto"
+              onClick={handleSubmit}
             >
-              Yes
-            </label>
-
-            <input
-              type="radio"
-              className="btn-check"
-              name={`btnradio-${currentQuestionIndex}`}
-              id={`btnradio${currentQuestionIndex}-no`}
-              onClick={() => handleRadioClick(currentQuestionIndex, 0)}
-              // autocomplete="off"
-            />
-            <label
-              className="btn btn-outline-secondary"
-              htmlFor={`btnradio${currentQuestionIndex}-no`}
-            >
-              No
-            </label>
+              Submit my Answers
+            </button>
           </div>
-          <button
-            onClick={handlePrevQuestion}
-            disabled={currentQuestionIndex === 0}
-          >
-            Previous
-          </button>
-          <button
-            onClick={handleNextQuestion}
-            disabled={
-              currentQuestionIndex === questionBank.anxietyQuestions.length
-            }
-          >
-            Next
-          </button>
-        </div>
-      ) : (
-        <div>
-          <h2>Thank you for completing the quiz!</h2>
-          <button onClick={handleSubmit}>Submit</button>
-        </div>
-      )}
-      {/* <div className="mx-auto">
-        <button className="btn btn-success w-50 mx-auto" type="submit">
-          Submit my Answers
-        </button>
-      </div> */}
-      {/* </form> */}
+        )}
+      </div>
       <Link to="/logout" className="logout-button">
         Logout
       </Link>

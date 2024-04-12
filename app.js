@@ -14,8 +14,13 @@ const io = socketIo(server);
 app.use(express.json());
 
 app.use(cors())
+// app.use(bodyParser.json());
 app.use("/api/v1", mainRouter);
 
+app.post("/predict",(req,res)=>{
+    console.log(req.body.body);
+    res.send(req.body.body);
+})
 const port = process.env.PORT || 3000;
 
 const start = async () => {
