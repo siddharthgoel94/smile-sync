@@ -80,7 +80,7 @@ const Dashboard = () => {
       body: [0.25, 0, 0.1111111111111111, 0, 0.14285714285714285],
     });
   }
-  test();
+  // test();
   async function handleSubmit() {
     // Handle submission logic here
     console.log("Submit Answers");
@@ -146,15 +146,15 @@ const Dashboard = () => {
   return (
     <div className="dashboard-main">
       <h2>{data.msg}</h2>
-      <h2>Welcome to your Dashboard</h2>
+      <h2>Welcome to our Questionnaire</h2>
       {/* <p> Lets start with a questionnaire to know you better</p> */}
 
-      <div className="container">
+      {/* <div className="container">
         <h3>Your Personality according to our tests</h3>
         <p>Intoverted</p>
         <p>Shy</p>
         <p>Reserved</p>
-      </div>
+      </div> */}
       <div className="container modalbox">
         {currentQuestionIndex < questionBank.length ? (
 
@@ -235,12 +235,17 @@ const Dashboard = () => {
         ) : (
           <div>
             <h2>Thank you for completing the quiz!</h2>
+            <a href="resultPage">
             <button
               className="btn btn-success w-50 mx-auto"
               onClick={handleSubmit}
             >
+              
               Submit my Answers
+              
             </button>
+            </a>
+            
           </div>
         )}
       </div>

@@ -51,7 +51,7 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="login-main">
+    <div className="login-main mt-5">
       <div className="login-left">
         <img src={Image} alt="" />
       </div>

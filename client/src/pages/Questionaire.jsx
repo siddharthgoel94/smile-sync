@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import questionBank from "../../utils/QuestionBank";
+import '../styles/questionnaire.css'
 
 const Questionaire = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -80,7 +81,7 @@ const Questionaire = () => {
       body: [0.25, 0, 0.1111111111111111, 0, 0.14285714285714285],
     });
   }
-  test();
+  // test();
   async function handleSubmit() {
     // Handle submission logic here
     console.log("Submit Answers");
@@ -145,11 +146,22 @@ const Questionaire = () => {
 
   return (
     <div className="dashboard-main">
-      {/* <h2>{data.msg}!<br/> */}
+      {/* <h2>{data.msg}!<br/></h2> */}
       <h2>Welcome to your Dashboard</h2>
-      <p> Lets start with a questionnaire to know you better</p>
+      <p>Here are your details</p>
 
-      <div className="container modalbox">
+      <ul className="user-profile-list">
+        {console.log(token)}
+        <li><h4>Name:</h4> Siddharth Goel</li>
+        <li><h4>Email:</h4> sid@example.com</li>
+        <li><h4>Username:</h4>sidgoel</li>
+        <li><h4>Phone:</h4> 9900112211</li>
+      </ul>
+
+
+      {/* <p> Lets start with a questionnaire to know you better</p> */}
+
+      {/* <div className="container modalbox">
         {currentQuestionIndex < questionBank.length ? (
           <div className="w-50 mx-auto">
             <h2>Question {currentQuestionIndex + 1}</h2>
@@ -220,7 +232,7 @@ const Questionaire = () => {
             </button>
           </div>
         )}
-      </div>
+      </div> */}
       {/* <Link to="/logout" className="logout-button">
         Logout
       </Link> */}

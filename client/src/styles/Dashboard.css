@@ -15,7 +15,7 @@
 }
 .clsdalo{
   height:10px;
-  background-color:var(--accent-color1);
+  background-color:green;
   transition:1s;
   border-radius: 0.2rem;
 }

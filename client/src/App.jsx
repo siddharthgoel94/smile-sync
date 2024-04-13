@@ -11,6 +11,8 @@ import { ToastContainer, toast } from "react-toastify";
 import Navbar from "./pages/Navbar";
 import FindFriends from "./pages/FindFriends";
 import Questionaire from "./pages/Questionaire";
+import DummyPage from "./pages/DummyPage";
+import Loader from "./pages/Loader";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        element: <Dashboard />,
+        element: <Questionaire/>,
       },
       {
         path: "logout",
@@ -43,7 +45,15 @@ const router = createBrowserRouter([
       },
       {
         path: "questionaire",
-        element: <Questionaire />,
+        element: <Dashboard/>,
+      },
+      {
+        path: "resultPage",
+        element:  <DummyPage/>,
+      },
+      {
+        path: "loader",
+        element:  <Loader/>,
       },
     ],
   },

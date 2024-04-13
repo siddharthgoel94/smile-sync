@@ -69,7 +69,7 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="register-main">
+    <div className="register-main mt-5">
       <div className="register-left">
         <img src={Image} alt="" />
       </div>
