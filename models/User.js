@@ -26,6 +26,22 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Please provide password'],
         minlength: 3
     },
+    username:{
+        type:String,
+        required: [true, 'Please provide name'],
+        minlength: 3,
+        maxlength: 50
+    },
+    phone:{
+        type:String,
+        required: [true, 'Please provide phone number']
+    },
+    clusterNumber:{
+        type:Number
+    },
+    characteristics:{
+        type:String
+    }
 });
 
 UserSchema.pre("save", async function(){

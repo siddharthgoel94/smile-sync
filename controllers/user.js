@@ -50,10 +50,13 @@ const getAllUsers = async (req, res) => {
 const register = async (req, res) => {
   let foundUser = await User.findOne({ email: req.body.email });
   if (foundUser === null) {
-    let { username, email, password } = req.body;
-    if (username.length && email.length && password.length) {
+    let { name, email, password,phone,username } = req.body;
+    // console.log(req.body);
+    if (name.length && email.length && password.length && phone.length && username.length) {
       const person = new User({
-        name: username,
+        name: name,
+        username:username,
+        phone:phone,
         email: email,
         password: password,
       });

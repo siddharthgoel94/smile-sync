@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import questionBank from "../../utils/QuestionBank";
 
-const Dashboard = () => {
+const Questionaire = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const handleNextQuestion = () => {
@@ -145,16 +145,10 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-main">
-      <h2>{data.msg}</h2>
+      {/* <h2>{data.msg}!<br/> */}
       <h2>Welcome to your Dashboard</h2>
-      {/* <p> Lets start with a questionnaire to know you better</p> */}
+      <p> Lets start with a questionnaire to know you better</p>
 
-      <div className="container">
-        <h3>Your Personality according to our tests</h3>
-        <p>Intoverted</p>
-        <p>Shy</p>
-        <p>Reserved</p>
-      </div>
       <div className="container modalbox">
         {currentQuestionIndex < questionBank.length ? (
           <div className="w-50 mx-auto">
@@ -234,4 +228,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Questionaire;
