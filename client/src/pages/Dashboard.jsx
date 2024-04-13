@@ -157,9 +157,18 @@ const Dashboard = () => {
       </div>
       <div className="container modalbox">
         {currentQuestionIndex < questionBank.length ? (
-          <div className="w-50 mx-auto">
-            <h2>Question {currentQuestionIndex + 1}</h2>
-            <p>{questionBank[currentQuestionIndex].question}</p>
+
+          
+          <>
+          <div className="card text-center w-75 mx-auto">
+          <div className="card-header fs-3">
+          Question {currentQuestionIndex+1}
+          </div>
+          <div className="card-body">
+            <h5 className="card-title"> </h5>
+            <p className="card-text fs-2">{questionBank[currentQuestionIndex].question}</p>
+            {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
+
             <div className="text-center">
               <div
                 className="btn-group mx-4 mx-auto"
@@ -169,14 +178,14 @@ const Dashboard = () => {
               >
                 <input
                   type="radio"
-                  className="btn-check"
+                  className="btn-check btn-lg"
                   name={`btnradio-${currentQuestionIndex}`}
                   id={`btnradio${currentQuestionIndex}-yes`}
                   onClick={() => handleRadioClick(currentQuestionIndex, 1)}
                   // autocomplete="off"
                 />
                 <label
-                  className="btn btn-outline-primary"
+                  className="btn btn-outline-primary btn-lg"
                   htmlFor={`btnradio${currentQuestionIndex}-yes`}
                 >
                   Yes
@@ -184,20 +193,21 @@ const Dashboard = () => {
 
                 <input
                   type="radio"
-                  className="btn-check"
+                  className="btn-check btn-lg"
                   name={`btnradio-${currentQuestionIndex}`}
                   id={`btnradio${currentQuestionIndex}-no`}
                   onClick={() => handleRadioClick(currentQuestionIndex, 0)}
                   // autocomplete="off"
                 />
                 <label
-                  className="btn btn-outline-secondary"
+                  className="btn btn-outline-secondary btn-lg"
                   htmlFor={`btnradio${currentQuestionIndex}-no`}
                 >
                   No
                 </label>
               </div>
             </div>
+
             <div className="text-center">
               <button
                 onClick={handlePrevQuestion}
@@ -214,12 +224,19 @@ const Dashboard = () => {
                 Next
               </button>
             </div>
+
+
           </div>
+          <div className="card-footer text-muted">
+            <div style={{width:`${currentQuestionIndex*2.77}%`}} className="clsdalo"></div>
+          </div>
+        </div>
+          </>
         ) : (
           <div>
             <h2>Thank you for completing the quiz!</h2>
             <button
-              lassName="btn btn-success w-50 mx-auto"
+              className="btn btn-success w-50 mx-auto"
               onClick={handleSubmit}
             >
               Submit my Answers
@@ -227,6 +244,7 @@ const Dashboard = () => {
           </div>
         )}
       </div>
+  
       {/* <Link to="/logout" className="logout-button">
         Logout
       </Link> */}
