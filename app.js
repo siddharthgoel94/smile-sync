@@ -24,7 +24,9 @@ app.post("/predict",(req,res)=>{
     // // Use your ML model to make a prediction
     // const prediction = predict(inputData);
     // res.send(prediction);
-    res.send("OK");
+    const clusterNumber=1;
+
+    res.send({clusterNumber:1});
 })
 const port = process.env.PORT || 3000;
 

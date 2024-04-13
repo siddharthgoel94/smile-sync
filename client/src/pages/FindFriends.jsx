@@ -24,34 +24,42 @@ const FindFriends = () => {
       case "Community 1":
         return [
           {
-            title: "Activity 1 for Community 1",
-            description: "Description of Activity 1...",
+            title: "Nitin Kumal",
+            description: "Age 20, eager to talk with new people",
           },
           {
-            title: "Activity 2 for Community 1",
-            description: "Description of Activity 2...",
+            title: "Manya Jain",
+            description: "Age 25,a shy and reserved person",
+          },
+          {
+            title: "Rohan das",
+            description: "Age 30, suffering from relationship problems",
+          },
+          {
+            title: "Tanya Saini",
+            description: "Age 25, victim of domestic abuse",
           },
         ];
       case "Community 2":
         return [
           {
-            title: "Activity 1 for Community 2",
-            description: "Description of Activity 1...",
+            title: "Vasu Yadav",
+            description: "Age 18, Suffering from ptsd",
           },
           {
-            title: "Activity 2 for Community 2",
-            description: "Description of Activity 2...",
+            title: "Sanya Sharma",
+            description: "Age 30, Feeling of inferiority complex",
           },
         ];
       case "Community 3":
         return [
           {
-            title: "Activity 1 for Community 3",
-            description: "Description of Activity 1...",
+            title: "Siddharth",
+            description: "Age 20, career tension",
           },
           {
-            title: "Activity 2 for Community 3",
-            description: "Description of Activity 2...",
+            title: "Sarvesh",
+            description: "Age 21, Relationship problems",
           },
         ];
       default:
@@ -108,6 +116,7 @@ const FindFriends = () => {
             <div className="activity" key={index}>
               <h3>{activity.title}</h3>
               <p>{activity.description}</p>
+              <button className="btn btn-primary">Have a chat with them</button>
             </div>
           ))}
         </div>
